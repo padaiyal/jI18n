@@ -1,5 +1,7 @@
-package org.padaiyal.mavenprojecttemplate.parameterconverters;
+package org.padaiyal.parameterconverters;
 
+import java.util.IllegalFormatConversionException;
+import java.util.MissingResourceException;
 import java.util.Objects;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
@@ -26,6 +28,8 @@ public class ExceptionClassConverter implements ArgumentConverter {
     return switch (expectedExceptionClassString) {
       case "NullPointerException.class" -> NullPointerException.class;
       case "IllegalArgumentException.class" -> IllegalArgumentException.class;
+      case "MissingResourceException.class" -> MissingResourceException.class;
+      case "IllegalFormatConversionException.class" -> IllegalFormatConversionException.class;
       default -> throw new ArgumentConversionException(
           "Unable to parse expected exception from input string: " + expectedExceptionClassString
       );
