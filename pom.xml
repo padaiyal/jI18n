@@ -6,7 +6,7 @@
 
   <groupId>org.padaiyal.utilities</groupId>
   <artifactId>i18n</artifactId>
-  <version>2021.01.13</version>
+  <version>2021.01.14</version>
 
   <parent>
     <groupId>org.padaiyal</groupId>
@@ -14,7 +14,15 @@
     <version>2021.01.09</version>
     <relativePath>jPopper</relativePath>
   </parent>
-
+  <dependencies>
+    <dependency>
+      <groupId>org.padaiyal.utilities</groupId>
+      <artifactId>properties</artifactId>
+      <version>2021.01.13</version>
+      <scope>system</scope>
+      <systemPath>${pom.basedir}/properties-2021.01.13.jar</systemPath>
+    </dependency>
+  </dependencies>
   <distributionManagement>
     <repository>
       <id>github</id>

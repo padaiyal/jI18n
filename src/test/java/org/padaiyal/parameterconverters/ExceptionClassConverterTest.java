@@ -1,9 +1,11 @@
-package tests.org.padaiyal.mavenprojecttemplate.parameterconverters;
+package org.padaiyal.parameterconverters;
 
+import java.util.IllegalFormatConversionException;
+import java.util.MissingResourceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
-import org.padaiyal.mavenprojecttemplate.parameterconverters.ExceptionClassConverter;
+import org.padaiyal.parameterconverters.ExceptionClassConverter;
 
 /**
  * Tests the functionality of ExceptionClassConverter.
@@ -43,6 +45,15 @@ public class ExceptionClassConverterTest {
     Assertions.assertEquals(
         IllegalArgumentException.class,
         ExceptionClassConverter.convertExceptionNameToClass("IllegalArgumentException.class")
+    );
+    Assertions.assertEquals(
+        MissingResourceException.class,
+        ExceptionClassConverter.convertExceptionNameToClass("MissingResourceException.class")
+    );
+    Assertions.assertEquals(
+        IllegalFormatConversionException.class,
+        ExceptionClassConverter.convertExceptionNameToClass(
+            "IllegalFormatConversionException.class")
     );
   }
 }
